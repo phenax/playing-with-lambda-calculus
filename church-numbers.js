@@ -23,6 +23,6 @@ const mul = a => b => a(add(b))(_0);
 
 module.exports = {
   _0, _1, _2, _3, _4, _5,
-  add, mul,
+  add, mul, increment,
 };
 
