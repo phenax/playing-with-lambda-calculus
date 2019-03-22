@@ -11,15 +11,14 @@ const _3 = succ(_2);
 const _4 = succ(_3);
 const _5 = succ(_4);
 
-
 // \ab.a succ b
 const add = a => b => a(succ)(b);
 
 // add _1
 const increment = add(_1); // Or succ
 
-// \ab.a (add b) _0
-const mul = a => b => a(add(b))(_0);
+// \ab.a (add b) _0 == \abf.a (b f) == B
+const mul = B;
 
 module.exports = {
   _0, _1, _2, _3, _4, _5,
