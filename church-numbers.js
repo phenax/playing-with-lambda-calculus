@@ -20,8 +20,11 @@ const increment = add(_1); // Or succ
 // \ab.a (add b) _0 == \abf.a (b f) == B
 const mul = B;
 
+// \ab.ab
+const pow = a => b => b(a);
+
 module.exports = {
   _0, _1, _2, _3, _4, _5,
-  add, mul, increment,
+  add, mul, increment, pow,
 };
 
