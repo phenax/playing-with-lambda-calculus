@@ -1,9 +1,11 @@
 
 const { logBoolean, logNumber } = require('./utils');
 
+const { B } = require('./combinators');
+
 const { True, False, not, and, or, beq } = require('./boolean');
 const { _0, _1, _2, _3, _4, _5, add, mul, increment, pow } = require('./church-numbers');
-const { Pair, fst, snd } = require('./data-structs');
+const { Pair, fst, snd, List, map, append } = require('./data-structs');
 
 logBoolean(not(True), not(False));
 logBoolean(and(True)(True), and(False)(False), and(True)(False), and(False)(True));
@@ -24,4 +26,10 @@ const p53 = Pair(_5)(_3);
 logNumber(fst(p12), snd(p12));
 logNumber(fst(p44), snd(p44));
 logNumber(fst(p53), snd(p53));
+
+const list1 = B(List(_1))(List(_2))(null);
+const list2 = map(mul(_2))(list1);
+const list3 = B(append(_3))(append(_1))(list2);
+
+map(logNumber)(list3);
 
